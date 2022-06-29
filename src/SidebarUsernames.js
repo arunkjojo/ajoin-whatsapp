@@ -5,7 +5,7 @@ function sidebarUsernames({ usernames }) {
   return (
     <>
       {usernames.map((username, index) => (
-        <div className="username__row">
+        <div className="username__row" key={index}>
           <div className="sidebarChat__wrapper" style={{ width: "100%" }}>
             <Avatar src={username?.photoURL} />
             <div className="sidebarChat__info">

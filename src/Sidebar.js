@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react"
-import { Avatar, IconButton } from "@mui/material"
+import React, { useEffect, useState } from "react";
+import { Avatar, IconButton } from "@mui/material";
 import {
   DonutLarge,
   Chat,
   ExitToApp,
   SearchOutlined,
   Menu,
-} from "@mui/icons-material"
-import SidebarChat from "./SidebarChat"
-import db from "./firebase"
-import { collection, onSnapshot } from "firebase/firestore"
-import "./Sidebar.css"
-import { useStateValue } from "./StateProvider"
-import { actionTypes } from "./reducer"
-import UseWindowDimensions from "./UseWindowDimensions"
-import Loader from "./Loader"
+} from "@mui/icons-material";
+import SidebarChat from "./SidebarChat";
+import db from "./firebase";
+import { collection, onSnapshot } from "firebase/firestore";
+import "./Sidebar.css";
+import { useStateValue } from "./StateProvider";
+import { actionTypes } from "./reducer";
+import UseWindowDimensions from "./UseWindowDimensions";
+import Loader from "./Loader";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -47,32 +47,32 @@ function Sidebar() {
     }
   }, [input]);
 
-  useEffect(()=>{
-    const unsubscribe = onSnapshot(collection(db, 'rooms'), snapshot => (
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "rooms"), (snapshot) =>
       setRooms(
-        snapshot.docs.map(doc => (
-          {
-            id: doc.id,
-            data: doc.data(),
-          }
-        ))
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
       )
-    ));
+    );
     return () => {
-      unsubscribe()
-    }
-  }, [])
+      unsubscribe();
+    };
+  }, []);
+
   useEffect(() => {
     setToggler(!toggler);
   }, [togglerState]);
+
   const handleDrawerToggle = () => {
     setToggler(toggler);
-
     dispatch({
       type: actionTypes.SET_TOGGLER,
       togglerState: togglerState + 1,
     });
   };
+
   const photoURL =
     localStorage.getItem("photoURL") !== ""
       ? localStorage.getItem("photoURL")
@@ -101,10 +101,10 @@ function Sidebar() {
               <p className="sidebar__greeting mobile__tag">
                 {" "}
                 <a
-                  href="https://alii13.github.io/portfolio/"
+                  href="https://arunkjojo-github-io.vercel.app/"
                   style={{ color: "white" }}
                 >
-                  Made with ♥ by <span style={{ color: "white" }}>Ali</span>
+                  Made with ♥ by <span style={{ color: "white" }}>AJOin</span>
                 </a>
               </p>
               <div className="sidebar__headerRight">
@@ -155,7 +155,7 @@ function Sidebar() {
             <Avatar src={photoURL} />{" "}
             <p className="sidebar__greeting">
               {" "}
-              <a href="https://alii13.github.io/portfolio/">
+              <a href="https://arunkjojo-github-io.vercel.app/">
                 Made with ♥ by <span style={{ color: "blue" }}>AJOin</span>
               </a>
             </p>

@@ -111,7 +111,8 @@ function Chat() {
 
   const postMessageData = async (roomId, input) => {
     try {
-      setDoc(doc(db, "rooms", roomId, "messages"), {
+      const messageDoc = doc(collection(db, `rooms`, roomId, `messages`));
+      setDoc(messageDoc, {
         message: input,
         name: displayName,
         timestamp: Timestamp.fromDate(new Date()),
@@ -139,19 +140,9 @@ function Chat() {
     e.preventDefault();
     // console.log("You Typedd >>>>",input);
     if (input.length > 0) {
-      console.log(input);
-      //   db.collection("rooms")
-      //     .doc(roomId)
-      //     .collection("messages")
-      //     .add({
-      //       message: input,
-      //       name: displayName,
-      //       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      //       photoURL: localStorage.getItem("photoURL"),
-      //     });
 
       postMessageData(roomId, input);
-      
+
       setIssendChecked(!issendChecked);
       issendChecked ? playOff() : playOn();
       setInput("");

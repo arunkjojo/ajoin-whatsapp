@@ -5,9 +5,15 @@ import Sidebar from "./Sidebar"
 import Login from "./Login"
 import "./App.css"
 import { useStateValue } from "./StateProvider"
+import UseWindowDimensions from "./UseWindowDimensions"
 
 function App() {
-  const [{ user }, dispatch] = useStateValue()
+  const [{ user }, dispatch] = useStateValue();
+  const { width } = UseWindowDimensions();
+  const uid =
+    localStorage.getItem("uid") !== undefined
+      ? localStorage.getItem("uid")
+      : null;
   return (
     // BEM Naming convetion
 

@@ -3,7 +3,7 @@ import SidebarChat from "./SidebarChat";
 import "./SidebarChatList.css";
 function SidebarChatList(props) {
   const { rooms, dr } = props;
-  console.log(dr);
+  console.log("dr", dr);
   return (
     <div class="sidebar__chatList">
       <div className="sidebar__chats">

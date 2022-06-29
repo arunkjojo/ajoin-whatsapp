@@ -1,9 +1,9 @@
-import { Button } from "@mui/material";
 import React from "react";
+import { Button } from "@mui/material";
+import "./Login.css";
 import { auth, provider } from "./firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useStateValue } from "./StateProvider";
-import "./Login.css";
 import { actionTypes } from "./reducer";
 
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
             alt="WhatApp"
             />
             <div className="login_text">
-            <h1>Join to WhatsApp</h1>
+            <h1>Join WhatsApp</h1>
             </div>
             <Button onClick={signIn}>Sign in with Google</Button>
         </div>

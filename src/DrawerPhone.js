@@ -1,12 +1,9 @@
-import React from "react";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import SidebarChatList from "./SidebarChatList";
-import "./DrawerPhone.css";
+import React from "react"
+import { Drawer, Hidden, Toolbar, IconButton } from "@mui/material"
+import { Menu } from "@mui/icons-material"
+import { makeStyles, useTheme } from "@mui/material/styles"
+import SidebarChatList from "./SidebarChatList"
+import "./DrawerPhone.css"
 
 const drawerWidth = 240;
 
@@ -67,7 +64,7 @@ function DrawerPhone(props) {
           onClick={handleDrawerToggle}
           className={classes.menuButton}
         >
-          <MenuIcon />
+          <Menu />
         </IconButton>
       </Toolbar>
 
