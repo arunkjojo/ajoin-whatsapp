@@ -77,7 +77,6 @@ function Sidebar() {
     localStorage.getItem("photoURL") !== ""
       ? localStorage.getItem("photoURL")
       : null;
-  const displayName = localStorage.getItem("displayName");
   return (
     <>
       {width < 629 ? (
