@@ -13,11 +13,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### 4: Goto `src` & Find file named `firebase.js` => Replace the config data to your project config data.
 
-![](https://i.ibb.co/DLS72Py/final.png)
+![](https://i.ibb.co/xH6GPN0/Screenshot-2022-06-29-at-5-12-39-PM.png)
 Firebase config data you have to replace it with yours & save.
 
 #### 5: Now, Goto `src` directory again and find file named `.firebasesrc`
-![](https://i.ibb.co/zhPvYpc/firebasesrc.png)
+![](https://i.ibb.co/pfM8P8L/Screenshot-2022-06-29-at-5-16-02-PM.png)
 
 Replace the line `"default": "your_project__name"` & save.
 
